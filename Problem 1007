@@ -1,0 +1,10 @@
+var input = require('fs').readFileSync('/dev/stdin', 'utf8');
+var lines = input.split('\n');
+var prompt = function(texto) {return lines.shift();};
+
+var A = parseInt(prompt("Insira um numero: "));
+var B = parseInt(prompt("Insira um numero: "));
+var C = parseInt(prompt("Insira um numero: "));
+var D = parseInt(prompt("Insira um numero: "));
+var dif = (A * B) - (C * D);
+console.log("DIFERENCA = " + dif);
