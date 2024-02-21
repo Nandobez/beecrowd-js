@@ -1,0 +1,38 @@
+var input = require('fs').readFileSync('/dev/stdin', 'utf8');
+var lines = input.split('\n');
+var prompt = function(texto) {return lines.shift();};
+
+var S = parseFloat(prompt("Insira seu salario: ")).toFixed(2);
+var resul = 0;
+var rest = 0;
+
+if( S < 0 ){
+    
+    S = 0;
+    
+}
+
+if( S >= 0 && S <= 2000.00){
+    
+    console.log("Isento");
+    
+}else if( S > 2000.00 && S <= 3000.00){
+    
+    rest = S - 2000.00;
+    resul = rest * 0.08;
+    
+    console.log("R$ " + resul.toFixed(2));
+    
+}else if( S > 3000.00 && S <= 4500.00){
+    
+     rest = S - 3000;
+     resul = (rest * 0.18) + (1000 * 0.08);
+    console.log("R$ " + resul.toFixed(2));
+    
+}else if( S > 4500.00){
+    
+    rest = S - 4500;
+    resul = (rest * 0.28) + (1500 * 0.18) + (1000 * 0.08);
+    console.log("R$ " + resul.toFixed(2));
+    
+}
