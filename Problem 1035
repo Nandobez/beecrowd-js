@@ -1,0 +1,18 @@
+var input = require('fs').readFileSync('/dev/stdin', 'utf8');
+var lines = input.split('\n');
+var prompt = function(texto){return lines.shift();};
+
+var ABCD = prompt("Insira quatro numeros inteiros: ").split(" ");
+
+var A = parseInt(ABCD[0]);
+var B = parseInt(ABCD[1]);
+var C = parseInt(ABCD[2]);
+var D = parseInt(ABCD[3]);
+var SCD = C + D;
+var SAB = A + B;
+
+if(B > C && D > A && SCD > SAB && C >= 0 && D >= 0 && A % 2 == 0){
+    console.log("Valores aceitos");
+}else{
+    console.log("Valores nao aceitos");
+}
