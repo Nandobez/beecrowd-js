@@ -1,0 +1,17 @@
+var input = require('fs').readFileSync('/dev/stdin', 'utf8');
+var lines = input.split('\n');
+var prompt = function(texto){return lines.shift();};
+
+var ABC = prompt("Insira os numeros: ").split(" ");
+
+var A = parseFloat(ABC[0]);
+var B = parseFloat(ABC[1]);
+var C = parseFloat(ABC[2]);
+
+if(A < B + C && B < A + C && C < A + B){
+    var P = A + B + C;
+    console.log("Perimetro = " + P.toFixed(1));
+}else{
+    var Ar = ((A + B) * C) / 2;
+    console.log("Area = " + Ar.toFixed(1));
+}
