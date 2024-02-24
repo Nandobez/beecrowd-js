@@ -1,0 +1,43 @@
+var input = require('fs').readFileSync('/dev/stdin', 'utf8');
+var lines = input.split('\n');
+var prompt = function(texto){return lines.shift();};
+
+var N = parseFloat(prompt("Insira o salario: "));
+var S = 0;
+var D = 0;
+
+if(N < 0){
+    N = 0;
+}
+
+if(N >= 0.00 && N <= 400.00){
+    S = N + (N * 0.15);
+    D = N * 0.15;
+    console.log("Novo salario: " + S.toFixed(2));
+    console.log("Reajuste ganho: " + D.toFixed(2));
+    console.log("Em percentual: 15 %");
+}else if(N > 400.00 && N <= 800.00){
+    S = N + (N * 0.12);
+    D = N * 0.12;
+    console.log("Novo salario: " + S.toFixed(2));
+    console.log("Reajuste ganho: " + D.toFixed(2));
+    console.log("Em percentual: 12 %");
+}else if(N > 800.00 && N <= 1200.00){
+    S = N + (N * 0.10);
+    D = N * 0.10;
+    console.log("Novo salario: " + S.toFixed(2));
+    console.log("Reajuste ganho: " + D.toFixed(2));
+    console.log("Em percentual: 10 %");
+}else if(N > 1200.00 && N <= 2000.00){
+    S = N + (N * 0.07);
+    D = N * 0.07;
+    console.log("Novo salario: " + S.toFixed(2));
+    console.log("Reajuste ganho: " + D.toFixed(2));
+    console.log("Em percentual: 7 %");
+}else{
+    S = N + (N * 0.04);
+    D = N * 0.04;
+    console.log("Novo salario: " + S.toFixed(2));
+    console.log("Reajuste ganho: " + D.toFixed(2));
+    console.log("Em percentual: 4 %");
+}
