@@ -1,0 +1,24 @@
+var input = require('fs').readFileSync('/dev/stdin', 'utf8');
+var lines = input.split('\n');
+var prompt = function(texto){return lines.shift();};
+
+var X = parseInt(prompt("Insira o numero 1: "));
+var Y = parseInt(prompt("Insira o numero 2: "));
+
+var sum = 0;
+
+if (X > Y) {
+    for (var i = Y + 1; i < X; i++) {
+        if (i % 2 !== 0) {
+            sum += i;
+        }
+    }
+} else if (Y > X) {
+    for (var i = X + 1; i < Y; i++) {
+        if (i % 2 !== 0) {
+            sum += i;
+        }
+    }
+}
+
+console.log(sum);
